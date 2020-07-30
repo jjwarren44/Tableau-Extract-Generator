@@ -87,7 +87,7 @@ def upload_extract_to_server(extract_path, config):
             break
 
     if (project_id == None):
-        print('Project name {} not found.'.format(config['project']))
+        print(f'Project name {config['project']} not found.')
         exit()
 
     # Connect to datasources in project and publish
