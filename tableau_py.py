@@ -1,10 +1,8 @@
 import pandas as pd
+import numpy as np
 from tableauhyperapi import HyperProcess, Telemetry, Connection, CreateMode, NOT_NULLABLE, NULLABLE, SqlType, TableDefinition, Inserter, escape_name, escape_string_literal, HyperException, TableName
 import tableauserverclient as TSC
 
-'''
-
-'''
 def df_to_extract(df, output_path):
     '''
     Converts a Pandas dataframe to a Tableau Extract.

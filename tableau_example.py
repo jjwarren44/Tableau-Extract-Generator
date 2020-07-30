@@ -1,4 +1,3 @@
-
 '''
 Creating a Tableau extract from a dataframe and uploading it to Tableau Server
 '''
@@ -17,8 +16,17 @@ tableau_config = {
 # Set where you want the Tableau extract to output
 extract_path = 'example_data/example_output.hyper'
 
+# Specify all dtypes
+dtypes = {
+    'Item': 'int32',
+    'Description': str,
+    'Location': 'int32',
+    'Date': 'datetime64[ns]',
+    'Supply': 'float64'
+}
+
 # Create example dataframe
-df = pd.read_csv('example_data/input_data.csv')
+df = pd.read_csv('example_data/input_data.csv').astype(dtypes)
 
 # Create Tableau extract
 df_to_extract(df, extract_path)
